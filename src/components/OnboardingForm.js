@@ -58,7 +58,7 @@ function OnboardingForm() {
     });
 
     return (
-        <div className="App">
+        <div className="form-container">
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(handleNext)}>
                     <Stepper activeStep={activeStep}>
