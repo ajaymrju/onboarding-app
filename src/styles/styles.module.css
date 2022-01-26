@@ -23,9 +23,11 @@
 .stepper-wrapper .step-item .MuiStepLabel-root .MuiStepLabel-iconContainer {
   padding: 0;
 }
-.form-headline {
+.step-headline {
+  text-align: center;
 }
-.form-caption {
+.step-caption {
+  text-align: center;
   font-weight: 500;
   color: #6f7988;
 }
@@ -60,9 +62,10 @@
 .text-trans--capitalize {
   text-transform: capitalize;
 }
-.complete-status {
+.complete-status--img {
+  display: block;
   width: 74px;
-  margin-bottom: 28px;
+  margin: 0 auto 28px auto;
 }
 .customInput-wrapper {
   gap: 24px;

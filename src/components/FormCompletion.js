@@ -8,8 +8,8 @@ function FormCompletion() {
 
     return (
         <>
-            <img src={completeIcon} alt="done!" className={styles['complete-status']} />
-            <Typography variant="h4" gutterBottom component="div" className={styles['text-trans--capitalize']}>
+            <img src={completeIcon} alt="done!" className={styles['complete-status--img']} />
+            <Typography variant="h4" gutterBottom component="div" className={styles['step-headline']} >
                 Congratulations, {getValues('displayName')}!
             </Typography>
             <Typography variant="subtitle1" display="block" gutterBottom fontWeight={500} color={'#6f7988'} className={styles['step-caption']}>
