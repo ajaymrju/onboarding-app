@@ -1,18 +1,12 @@
+import { Typography } from '@mui/material';
 import edenLogo from '../icons/edenLogo.png';
+import styles from '../styles/styles.module.css'
 
-const headerStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
-}
-const h1Style = {
-    margin: '0 0 0 6px',
-}
 function Header() {
     return (
-        <header style={headerStyle} >
-            <img src={edenLogo} alt="" />
-            <h1 style={h1Style}>Eden</h1>
+        <header className={styles['header']} >
+            <img src={edenLogo} alt="Eden" width="38px" />
+            <Typography variant='h1'>Eden</Typography>
         </ header>
 
 

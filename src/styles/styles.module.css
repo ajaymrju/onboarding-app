@@ -1,0 +1,117 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 46px;
+  gap: 2px;
+}
+.headline {
+  margin: 0 0 0 6px;
+}
+
+.stepper-wrapper {
+  max-width: 340px;
+  margin: auto;
+  margin: 64px auto;
+}
+
+.step-item {
+  /* width: 24px;
+  height: 24px; */
+  padding: 0;
+}
+.stepper-wrapper .step-item .MuiStepLabel-root .MuiStepLabel-iconContainer {
+  padding: 0;
+}
+.form-headline {
+}
+.form-caption {
+  font-weight: 500;
+  color: #6f7988;
+}
+.form-wrapper {
+  max-width: 390px;
+  margin: auto;
+  text-align: left;
+  display: grid;
+  margin-top: 38px;
+  row-gap: 18px;
+}
+/* display={'flex'} padding={'14px'} border={'1px solid #eaeef5'} borderRight={'0px'} borderRadius={'4px'} fontSize={14} bgcolor={'#f8f9fc'} color={'#a9a9a9'} boxSizing={'border-box'} margin={'8px 0 4px'} lineHeight={'1.2'} */
+
+.input-tag {
+  display: flex;
+  padding: 14px;
+  border: 1px solid #eaeef5;
+  border-right: 0;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #f8f9fc;
+  color: #a9a9a9;
+  box-sizing: border-box;
+  margin: 8px 0 4px;
+  line-height: 1.295;
+  font-family: "Inter";
+}
+.custom-input--tagged {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.text-trans--capitalize {
+  text-transform: capitalize;
+}
+.complete-status {
+  width: 74px;
+  margin-bottom: 28px;
+}
+.customInput-wrapper {
+  gap: 24px;
+}
+.customInput-wrapper .customInput-button:not(:last-of-type) {
+  border-top-right-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+  border-radius: 6px;
+}
+
+.customInput-wrapper .customInput-button:not(:first-of-type) {
+  border-top-left-radius: 6px !important;
+  border-bottom-left-radius: 6px !important;
+  border-radius: 6px;
+  margin-left: 0;
+  border-width: 1px !important;
+  border-left: 1px s;
+}
+.customInput-wrapper .customInput-button {
+  flex-grow: 1;
+  flex: 50%;
+}
+.subscription-label {
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: none;
+  pointer-events: none;
+}
+.subscription-caption {
+  font-weight: 300;
+  pointer-events: none;
+  text-transform: none;
+}
+.toggle-select {
+  text-align: left;
+  pointer-events: none;
+  padding: 12px;
+}
+.icon-item {
+  width: 32px;
+  margin-bottom: 24px;
+}
+
+@media screen and (max-width: 992px) {
+  .stepper-wrapper {
+    max-width: 300px;
+    margin: 32px auto;
+  }
+  .form-wrapper {
+    margin-top: 28px;
+  }
+}

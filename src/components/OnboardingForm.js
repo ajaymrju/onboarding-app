@@ -1,11 +1,15 @@
-import { Stepper, Step, StepLabel, Button, } from '@mui/material';
+import { Stepper, Step, StepLabel, Button, Container, styled } from '@mui/material';
 import { useState } from 'react';
 import { useForm, FormProvider, } from "react-hook-form"
 import PersonalDetails from "./PersonalDetails"
 import WorkspaceDetails from "./WorkspaceDetails"
 import SubscriptionDetails from "./SubscriptionDetails"
 import FormCompletion from "./FormCompletion"
-
+import styles from '../styles/styles.module.css'
+import { Box } from '@mui/system';
+import StepConnector, {
+    stepConnectorClasses
+} from "@mui/material/StepConnector";
 
 const steps = [
     {
@@ -29,7 +33,28 @@ const steps = [
         app: <FormCompletion />
     }
 ];
-
+const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
+    [`&.${stepConnectorClasses.alternativeLabel}`]: {
+        top: 22
+    },
+    [`&.${stepConnectorClasses.active}`]: {
+        [`& .${stepConnectorClasses.line}`]: {
+            background: 'rgb(102,77,229)',
+        }
+    },
+    [`&.${stepConnectorClasses.completed}`]: {
+        [`& .${stepConnectorClasses.line}`]: {
+            background: 'rgb(102,77,229)',
+        }
+    },
+    [`& .${stepConnectorClasses.line}`]: {
+        height: 1,
+        border: 0,
+        backgroundColor:
+            theme.palette.mode === "dark" ? theme.palette.grey[800] : "#eaeaf0",
+        borderRadius: 1
+    }
+}));
 function OnboardingForm() {
     const [activeStep, setActiveStep] = useState(0);
 
@@ -52,35 +77,39 @@ function OnboardingForm() {
             fullName: "",
             displayName: "",
             workspaceName: "",
-            workspaceURL: "",
+            workspaceURL: "www.eden.com/",
+            workspaceDirectory: "",
             subscription: "myself",
+
         },
     });
 
     return (
         <div className="form-container">
-            <FormProvider {...methods}>
-                <form onSubmit={methods.handleSubmit(handleNext)}>
-                    <Stepper activeStep={activeStep}>
-                        {steps.map((item, index) => {
-                            const stepProps = {};
-                            const labelProps = {};
-                            return (
-                                <Step key={index} {...stepProps}>
-                                    <StepLabel {...labelProps}></StepLabel>
-                                </Step>
-                            );
-                        })}
-                    </Stepper>
-
-                    {steps[activeStep].app ? steps[activeStep].app : "Sorry! there's an issue here"}
-
-                    <Button variant="contained" type="submit" >
-                        {activeStep === totalSteps() - 1 ? 'Launch Workspace' : 'Create Workspace'}
-                    </Button>
-                </form>
-            </FormProvider>
-        </div>
+            <Stepper activeStep={activeStep} className={styles['stepper-wrapper']} connector={<ColorlibConnector />}>
+                {steps.map((item, index) => {
+                    const stepProps = {};
+                    const labelProps = {};
+                    return (
+                        <Step key={index} {...stepProps} className={styles['step-item']}>
+                            <StepLabel {...labelProps}></StepLabel>
+                        </Step>
+                    );
+                })}
+            </Stepper>
+            <Container maxWidth="sm">
+                <FormProvider {...methods}>
+                    <form onSubmit={methods.handleSubmit(handleNext)}>
+                        {steps[activeStep].app ? steps[activeStep].app : "Sorry! there's an issue here"}
+                        <Box maxWidth={390} margin={"auto"} marginTop={'24px'}>
+                            <Button variant="contained" type="submit" fullWidth >
+                                {activeStep === totalSteps() - 1 ? 'Launch Workspace' : 'Create Workspace'}
+                            </Button>
+                        </Box>
+                    </form>
+                </FormProvider>
+            </Container>
+        </div >
     );
 }
 
