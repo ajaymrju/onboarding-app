@@ -1,3 +1,9 @@
+# Onboarding-app
+An app which has onboarding flow of user in setting up a workspace.
+
+Created using ReactJS, Material UI with React hook form node package,
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
