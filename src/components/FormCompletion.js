@@ -13,7 +13,7 @@ function FormCompletion() {
                 Congratulations, {getValues('displayName')}!
             </Typography>
             <Typography variant="subtitle1" display="block" gutterBottom fontWeight={500} color={'#6f7988'} className={styles['step-caption']}>
-                We'll streamline your setup experience accordingly
+                You have completed onboarding, you can start using the Eden!
             </Typography>
         </>
     )
